@@ -29,5 +29,45 @@
         </div>
 
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h5>Contact Details</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contact of contacts">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.mobile}}</td>
+                    <td><i class="fa fa-edit"></i> | <i class="fa fa-trash" (click)="deleteContact(contact.email)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div [formGroup]="contactForm">
+            <p>
+                <label for="name">Name: </label>
+                <input id="name" type="text" class="form-control" formControlName="name">
+            </p>
+            <p>
+                <label for="email">Email: </label>
+                <input id="email" type="text" class="form-control" formControlName="email">
+            </p>
+            <p>
+                <label for="mobile">Mobile: </label>
+                <input id="mobile" type="text" class="form-control" formControlName="mobile">
+            </p>
+            <p>
+                <button (click)="addContact()">Add Contact</button>
+            </p>
+        </div>
+
+        <p>Value: {{ contactForm.value | json }}</p>
+    </div>
 </div>

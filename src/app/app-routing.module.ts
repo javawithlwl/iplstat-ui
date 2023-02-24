@@ -5,6 +5,11 @@ import { FormsComponent } from './forms/forms.component';
 import { IplstatsComponent } from './iplstats/iplstats.component';
 
 const routes: Routes = [
+  {
+    path:'',
+    redirectTo:'basics',
+    pathMatch:'full'
+  },
     {
       path:'basics',
       component: BasicsComponent

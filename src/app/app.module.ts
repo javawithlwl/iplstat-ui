@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { BasicsComponent } from './basics/basics.component';
 import { FormsComponent } from './forms/forms.component';
 import { IplstatsComponent } from './iplstats/iplstats.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
